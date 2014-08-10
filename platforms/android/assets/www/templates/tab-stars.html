@@ -1,8 +1,8 @@
 <ion-view title="Stars" ng-init="refresh()">
   <ion-content class="has-header">
     <ion-list>
-      <ion-item ng-repeat="repo in data" type="item-text-wrap" href="#/tab/">
-        {{repo.name}}
+      <ion-item ng-repeat="repo in data" type="item-text-wrap">
+        <a ng-href="{{repo.html_url}}" target="_system"><b>{{repo.full_name}}</b> - {{repo.description}}</a>
       </ion-item>
     </ion-list>
   </ion-content>

@@ -16,6 +16,7 @@ angular.module('starter.controllers', [])
 			$http({method: 'GET', url: 'https://api.github.com/users/'+User.name+'/starred'}).
 				success(function(data, status, headers, config){
 					$scope.data = data;
+					console.log(data);
 				}).
 				error(function(data, status, headers, config){
 					console.log('not cool');

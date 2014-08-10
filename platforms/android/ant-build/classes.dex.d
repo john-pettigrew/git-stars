@@ -1,5 +1,19 @@
 /home/john/Documents/code/john/git-stars/platforms/android/ant-build/classes.dex : \
 /home/john/Documents/code/john/git-stars/platforms/android/ant-build/classes/org/apache/cordova/device/Device.class \
+/home/john/Documents/code/john/git-stars/platforms/android/ant-build/classes/org/apache/cordova/inappbrowser/InAppBrowser$4$1.class \
+/home/john/Documents/code/john/git-stars/platforms/android/ant-build/classes/org/apache/cordova/inappbrowser/InAppBrowser$3.class \
+/home/john/Documents/code/john/git-stars/platforms/android/ant-build/classes/org/apache/cordova/inappbrowser/InAppBrowser$5$2.class \
+/home/john/Documents/code/john/git-stars/platforms/android/ant-build/classes/org/apache/cordova/inappbrowser/InAppBrowser$4.class \
+/home/john/Documents/code/john/git-stars/platforms/android/ant-build/classes/org/apache/cordova/inappbrowser/InAppBrowser$InAppBrowserClient.class \
+/home/john/Documents/code/john/git-stars/platforms/android/ant-build/classes/org/apache/cordova/inappbrowser/InAppBrowser$5$4.class \
+/home/john/Documents/code/john/git-stars/platforms/android/ant-build/classes/org/apache/cordova/inappbrowser/InAppBrowser.class \
+/home/john/Documents/code/john/git-stars/platforms/android/ant-build/classes/org/apache/cordova/inappbrowser/InAppBrowser$5$3.class \
+/home/john/Documents/code/john/git-stars/platforms/android/ant-build/classes/org/apache/cordova/inappbrowser/InAppBrowser$5.class \
+/home/john/Documents/code/john/git-stars/platforms/android/ant-build/classes/org/apache/cordova/inappbrowser/InAppBrowser$1.class \
+/home/john/Documents/code/john/git-stars/platforms/android/ant-build/classes/org/apache/cordova/inappbrowser/InAppBrowser$5$1.class \
+/home/john/Documents/code/john/git-stars/platforms/android/ant-build/classes/org/apache/cordova/inappbrowser/InAppChromeClient.class \
+/home/john/Documents/code/john/git-stars/platforms/android/ant-build/classes/org/apache/cordova/inappbrowser/InAppBrowser$2.class \
+/home/john/Documents/code/john/git-stars/platforms/android/ant-build/classes/org/apache/cordova/inappbrowser/InAppBrowserDialog.class \
 /home/john/Documents/code/john/git-stars/platforms/android/ant-build/classes/com/ionicframework/gitstars383979/gitStars.class \
 /home/john/Documents/code/john/git-stars/platforms/android/ant-build/classes/com/ionicframework/gitstars383979/BuildConfig.class \
 /home/john/Documents/code/john/git-stars/platforms/android/ant-build/classes/com/ionicframework/gitstars383979/R$drawable.class \
