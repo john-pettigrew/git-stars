@@ -1,11 +1,17 @@
 <ion-view title="Stars" ng-init="refresh()">
   <ion-content class="has-header">
-    <ion-list ng-repeat="repo in data">
-    	<a ng-href="{{repo.html_url}}" target="_blank">
-    		<ion-item type="item-text-wrap">
-    			<b>{{repo.full_name}}</b> - {{repo.description}}
-    		</ion-item>
-    	</a>
+    <div class="row" ng-show="checkNumber()">
+      <button class="button col button-positive" ng-click="prev()">Previous</button>
+      <button class="button col button-positive" ng-click="next()">Next</button>
+    </div>
+    <ion-list>
+    	<span ng-repeat="repo in data">
+	    	<span ng-click="visit('{{repo.html_url}}')">
+	    		<ion-item type="item-text-wrap">
+	    			<b>{{repo.full_name}}</b> - {{repo.description}}
+	    		</ion-item>
+	    	</span>
+    	</span>
     </ion-list>
   </ion-content>
 </ion-view>

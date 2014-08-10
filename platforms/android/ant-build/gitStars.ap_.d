@@ -140,9 +140,12 @@
 /home/john/Documents/code/john/git-stars/platforms/android/assets/www/js/services.js \
 /home/john/Documents/code/john/git-stars/platforms/android/assets/www/js/controllers.js \
 /home/john/Documents/code/john/git-stars/platforms/android/assets/www/plugins/com.ionic.keyboard \
+/home/john/Documents/code/john/git-stars/platforms/android/assets/www/plugins/org.apache.cordova.inappbrowser \
 /home/john/Documents/code/john/git-stars/platforms/android/assets/www/plugins/org.apache.cordova.device \
 /home/john/Documents/code/john/git-stars/platforms/android/assets/www/plugins/com.ionic.keyboard/www \
 /home/john/Documents/code/john/git-stars/platforms/android/assets/www/plugins/com.ionic.keyboard/www/keyboard.js \
+/home/john/Documents/code/john/git-stars/platforms/android/assets/www/plugins/org.apache.cordova.inappbrowser/www \
+/home/john/Documents/code/john/git-stars/platforms/android/assets/www/plugins/org.apache.cordova.inappbrowser/www/inappbrowser.js \
 /home/john/Documents/code/john/git-stars/platforms/android/assets/www/plugins/org.apache.cordova.device/www \
 /home/john/Documents/code/john/git-stars/platforms/android/assets/www/plugins/org.apache.cordova.device/www/device.js \
 /home/john/Documents/code/john/git-stars/platforms/android/assets/www/css/style.css \
