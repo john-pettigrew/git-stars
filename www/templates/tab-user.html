@@ -1,10 +1,9 @@
-<ion-view title="User">
+<ion-view title="User" ng-init="refresh()">
   <ion-content class="has-header padding">
-    <h1>User</h1>
     <label class="item item-input item-floating-label">
 	    <span class="input-label">user name</span>
-	    <input type="text" placeholder="user name" ng-model="username">
+	    <input type="text" placeholder="user name" ng-model="username" ng-bind="username">
     </label>
-    <button ng-click="set(username)">TEST</button>
+    <button class="button button-full button-positive" ng-click="set(username)">TEST</button>
   </ion-content>
 </ion-view>

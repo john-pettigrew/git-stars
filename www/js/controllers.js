@@ -1,10 +1,13 @@
 angular.module('starter.controllers', [])
 
 .controller('UserCtrl', function($scope, $location, User) {
+	$scope.refresh = function(){
+		$scope.username = User.name;
+	};
 	$scope.set = function(username){
 		User.name = username;
 		$location.path('/tab/stars');
-	}
+	};
 })
 
 .controller('StarsCtrl', function($scope, $http, User) {
@@ -19,6 +22,6 @@ angular.module('starter.controllers', [])
 					data = null;
 				});
 		}
-	}
+	};
 
 });
