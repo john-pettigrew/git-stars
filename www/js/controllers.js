@@ -18,14 +18,9 @@ angular.module('starter.controllers', [])
 			$http({method: 'GET', url: 'https://api.github.com/users/'+User.name+'/starred?page=1'}).
 				success(function(data, status, headers, config){
 					$scope.data = data;
-					console.log(data);
 				}).
 				error(function(data, status, headers, config){
 					console.log('not cool');
-					console.log(data);
-					console.log(config);
-					console.log(headers);
-					console.log(status);
 					data = null;
 				});
 		}
@@ -39,12 +34,10 @@ angular.module('starter.controllers', [])
 				return true;
 			}
 			else{
-				console.log('not enough');
 				return false;
 			}
 		}
 		else{
-			console.log('undefined');
 			return false;
 		}
 	};
@@ -53,10 +46,8 @@ angular.module('starter.controllers', [])
 		$http({method: 'GET', url: 'https://api.github.com/users/'+User.name+'/starred?page='+$scope.page}).
 				success(function(data, status, headers, config){
 					$scope.data = data;
-					console.log(data);
 				}).
 				error(function(data, status, headers, config){
-					console.log('not cool');
 					data = null;
 				});
 	};
@@ -68,10 +59,8 @@ angular.module('starter.controllers', [])
 		$http({method: 'GET', url: 'https://api.github.com/users/'+User.name+'/starred?page='+$scope.page}).
 				success(function(data, status, headers, config){
 					$scope.data = data;
-					console.log(data);
 				}).
 				error(function(data, status, headers, config){
-					console.log('not cool');
 					data = null;
 				});
 	};
