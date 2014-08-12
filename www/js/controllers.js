@@ -14,7 +14,6 @@ angular.module('starter.controllers', [])
 	$scope.page = 1;
 	$scope.refresh = function(){
 		if(User.name !== undefined){
-			//$http.defaults.headers.get = {'User-Agent': 'john-pettigrew/git-stars'};
 			$http({method: 'GET', url: 'https://api.github.com/users/'+User.name+'/starred?page=1'}).
 				success(function(data, status, headers, config){
 					$scope.data = data;

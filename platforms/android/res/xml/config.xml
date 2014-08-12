@@ -17,10 +17,10 @@
     </feature>
     <name>gitStars</name>
     <description>
-        An Ionic Framework and Cordova project.
+        An app for viewing starred repositories on Github.
     </description>
-    <author email="hi@ionicframework" href="http://ionicframework.com/">
-      Ionic Framework Team
+    <author email="john.pettigrew404@gmail.com" href="http://www.john-pettigrew.com/">
+      https://github.com/john-pettigrew/git-stars
     </author>
     <content src="index.html" />
     <access origin="*" />
