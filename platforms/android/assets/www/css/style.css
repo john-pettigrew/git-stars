@@ -7,3 +7,7 @@ a:visited{
 	text-decoration: none;
 	color: #000000;
 }
+#loading-icon{
+	font-size:90px; 
+	text-align:center;
+}

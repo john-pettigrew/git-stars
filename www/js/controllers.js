@@ -12,15 +12,17 @@ angular.module('starter.controllers', [])
 
 .controller('StarsCtrl', function($scope, $http, User) {
 	$scope.page = 1;
+	$scope.loading = true;
 	$scope.refresh = function(){
 		if(User.name !== undefined){
 			$http({method: 'GET', url: 'https://api.github.com/users/'+User.name+'/starred?page=1'}).
 				success(function(data, status, headers, config){
 					$scope.data = data;
+					$scope.loading = false;
 				}).
 				error(function(data, status, headers, config){
-					console.log('not cool');
 					data = null;
+					$scope.loading = false;
 				});
 		}
 	};
@@ -41,16 +43,20 @@ angular.module('starter.controllers', [])
 		}
 	};
 	$scope.next = function(){
+		$scope.loading = true;
 		$scope.page++;
 		$http({method: 'GET', url: 'https://api.github.com/users/'+User.name+'/starred?page='+$scope.page}).
 				success(function(data, status, headers, config){
 					$scope.data = data;
+					$scope.loading = false;
 				}).
 				error(function(data, status, headers, config){
 					data = null;
+					$scope.loading = false;
 				});
 	};
 	$scope.prev = function(){
+		$scope.loading = true;
 		$scope.page--;
 		if($scope.page <= 0){
 			$scope.page = 1;
@@ -58,9 +64,11 @@ angular.module('starter.controllers', [])
 		$http({method: 'GET', url: 'https://api.github.com/users/'+User.name+'/starred?page='+$scope.page}).
 				success(function(data, status, headers, config){
 					$scope.data = data;
+					$scope.loading = false;
 				}).
 				error(function(data, status, headers, config){
 					data = null;
+					$scope.loading = false;
 				});
 	};
 
