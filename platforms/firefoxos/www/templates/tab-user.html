@@ -1,0 +1,9 @@
+<ion-view title="User" ng-init="refresh()">
+  <ion-content class="has-header padding">
+    <label class="item item-input item-floating-label">
+	    <span class="input-label">user name</span>
+	    <input type="text" placeholder="user name" ng-model="username" ng-bind="username">
+    </label>
+    <button class="button button-full button-positive" ng-click="set(username)">Search</button>
+  </ion-content>
+</ion-view>

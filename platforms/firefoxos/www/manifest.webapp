@@ -1,0 +1,20 @@
+{
+    "launch_path": "/index.html",
+    "installs_allowed_from": [
+        "*"
+    ],
+    "version": "0.0.1",
+    "name": "gitStars",
+    "pkgName": "com.ionicframework.gitstars383979",
+    "description": "An app for viewing starred repositories on Github.",
+    "developer": {
+        "name": "https://github.com/john-pettigrew/git-stars",
+        "url": "http://www.john-pettigrew.com/"
+    },
+    "permissions": {
+        "browser": {
+            "description": "Enables the app to implement a browser in an iframe."
+        }
+    },
+    "icons": {}
+}
