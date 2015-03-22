@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('app.controllers', [])
 
 .controller('UserCtrl', function($scope, $location, User) {
 	$scope.refresh = function(){
