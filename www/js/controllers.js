@@ -13,6 +13,7 @@ angular.module('app.controllers', [])
 .controller('StarsCtrl', function($scope, $http, User) {
 	$scope.page = 1;
 	$scope.loading = true;
+
 	$scope.refresh = function(){
 		if(User.name !== undefined){
 			$http({method: 'GET', url: 'https://api.github.com/users/'+User.name+'/starred?page=1'}).
@@ -27,9 +28,13 @@ angular.module('app.controllers', [])
 		}
 	};
 	$scope.visit = function(url){
+		// Open link in browser.
+
 		window.open(url, '_system', 'location=no');
 	};
 	$scope.checkNumber = function(){
+		// See if a next button is needed.
+		
 		if($scope.data !== undefined){
 			if($scope.data.length >= 30){
 				return true;
@@ -43,6 +48,8 @@ angular.module('app.controllers', [])
 		}
 	};
 	$scope.next = function(){
+		// Get next page of repositories
+
 		$scope.loading = true;
 		$scope.page++;
 		$http({method: 'GET', url: 'https://api.github.com/users/'+User.name+'/starred?page='+$scope.page}).
@@ -56,6 +63,8 @@ angular.module('app.controllers', [])
 				});
 	};
 	$scope.prev = function(){
+		// Get previous page of repositories
+
 		$scope.loading = true;
 		$scope.page--;
 		if($scope.page <= 0){
