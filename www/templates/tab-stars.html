@@ -1,8 +1,8 @@
-<ion-view title="Stars" ng-init="refresh()">
+<ion-view title="Stars" ng-init="getCurrentPage()">
   <ion-content class="has-header" style="text-align:center;">
-    <div class="row" ng-show="checkNumber()">
-      <button class="button col button-positive" ng-click="prev()">Previous</button>
-      <button class="button col button-positive" ng-click="next()">Next</button>
+    <div class="row">
+      <button class="button col button-positive" ng-click="prev()" ng-show="displayPreviousButton()">Previous</button>
+      <button class="button col button-positive" ng-click="next()" ng-show="displayNextButton()">Next</button>
     </div>
     <i id="loading-icon" class="icon ion-loading-c" ng-show="loading"></i>
     <ion-list>

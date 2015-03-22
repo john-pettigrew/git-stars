@@ -1,11 +1,10 @@
 angular.module('app.controllers', [])
 
 .controller('UserCtrl', function($scope, $location, User) {
-	$scope.refresh = function(){
-		$scope.username = User.name;
-	};
+	$scope.username = User.username();
+
 	$scope.set = function(username){
-		User.name = username;
+		User.setUser(username);
 		$location.path('/tab/stars');
 	};
 })
@@ -14,71 +13,60 @@ angular.module('app.controllers', [])
 	$scope.page = 1;
 	$scope.loading = true;
 
-	$scope.refresh = function(){
-		if(User.name !== undefined){
-			$http({method: 'GET', url: 'https://api.github.com/users/'+User.name+'/starred?page=1'}).
-				success(function(data, status, headers, config){
-					$scope.data = data;
-					$scope.loading = false;
-				}).
-				error(function(data, status, headers, config){
-					data = null;
-					$scope.loading = false;
-				});
+	$scope.getCurrentPage = function(){
+		if(User.username() !== undefined){
+			User.getPage($scope.page).then(function(data){
+				$scope.loading = false;
+				$scope.data = data;
+			});
 		}
 	};
+
 	$scope.visit = function(url){
 		// Open link in browser.
 
 		window.open(url, '_system', 'location=no');
 	};
-	$scope.checkNumber = function(){
+
+	$scope.displayNextButton = function(){
 		// See if a next button is needed.
-		
-		if($scope.data !== undefined){
-			if($scope.data.length >= 30){
-				return true;
-			}
-			else{
-				return false;
-			}
+
+		if($scope.data !== undefined && $scope.data !== null && $scope.data.length >= 30){
+			return true;
 		}
 		else{
 			return false;
 		}
 	};
+
+	$scope.displayPreviousButton = function(){
+		// See if a previous button is needed.
+
+		if($scope.data !== undefined && $scope.data !== null && $scope.data.length >= 1 && $scope.page > 1){
+			return true;
+		}
+		else{
+			return false;
+		}
+	};
+
+
 	$scope.next = function(){
 		// Get next page of repositories
 
-		$scope.loading = true;
 		$scope.page++;
-		$http({method: 'GET', url: 'https://api.github.com/users/'+User.name+'/starred?page='+$scope.page}).
-				success(function(data, status, headers, config){
-					$scope.data = data;
-					$scope.loading = false;
-				}).
-				error(function(data, status, headers, config){
-					data = null;
-					$scope.loading = false;
-				});
+		$scope.getCurrentPage();
 	};
+
 	$scope.prev = function(){
 		// Get previous page of repositories
 
-		$scope.loading = true;
 		$scope.page--;
 		if($scope.page <= 0){
 			$scope.page = 1;
 		}
-		$http({method: 'GET', url: 'https://api.github.com/users/'+User.name+'/starred?page='+$scope.page}).
-				success(function(data, status, headers, config){
-					$scope.data = data;
-					$scope.loading = false;
-				}).
-				error(function(data, status, headers, config){
-					data = null;
-					$scope.loading = false;
-				});
+
+		$scope.getCurrentPage();
 	};
 
 });
