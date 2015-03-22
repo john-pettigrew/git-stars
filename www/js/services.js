@@ -1,17 +1,36 @@
-angular.module('starter.services', [])
+angular.module('app.services', [])
 
-/**
- * A simple example service that returns some data.
- */
-.factory('User', function() {
-  // Might use a resource here that returns a JSON array
+.factory('User', function($q, $http) {
+  var username = '';
+  var savedData;
 
-  // Some fake testing data
-  var data;
+  $http.defaults.cache = false;
 
   return {
-    get: function() {
-      return data;
-    }
-  }
+    savedData: function(){
+      return savedData;
+    },
+    username: function(){
+      return username;
+    },
+    setUser: function(user){
+      username = user;
+    },
+    getPage: function(page){
+      var deferred = $q.defer();
+
+      $http({method: 'GET', url: 'https://api.github.com/users/'+username+'/starred?page='+page}).
+  				success(function(data, status, headers, config){
+  					savedData = data;
+            deferred.resolve(savedData);
+  				}).
+  				error(function(data, status, headers, config){
+            savedData = null;
+            deferred.resolve(savedData);
+  				}
+      );
+
+      return deferred.promise;
+  	}
+  };
 });

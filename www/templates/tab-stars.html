@@ -1,15 +1,24 @@
-<ion-view title="Stars" ng-init="refresh()">
+<ion-view title="Stars" ng-init="getCurrentPage()">
   <ion-content class="has-header" style="text-align:center;">
-    <div class="row" ng-show="checkNumber()">
-      <button class="button col button-positive" ng-click="prev()">Previous</button>
-      <button class="button col button-positive" ng-click="next()">Next</button>
+    <div class="row">
+      <button class="button col button-positive" ng-click="prev()" ng-show="displayPreviousButton()">Previous</button>
+      <button class="button col button-positive" ng-click="next()" ng-show="displayNextButton()">Next</button>
     </div>
-    <i id="loading-icon" class="icon ion-loading-c" ng-show="loading"></i>
+    <span data-ng-show="loading">
+      <i id="loading-icon" class="icon ion-loading-c"></i>
+    </span>
     <ion-list>
     	<span ng-repeat="repo in data" style="text-align:left;">
 	    	<span ng-click="visit('{{repo.html_url}}')">
 	    		<ion-item type="item-text-wrap">
 	    			<b>{{repo.full_name}}</b> - {{repo.description}}
+	    		</ion-item>
+	    	</span>
+    	</span>
+      <span style="text-align:left;" ng-show="!data || data.length === 0">
+	    	<span>
+	    		<ion-item type="item-text-wrap">
+	    			<b>No starred repositories found.</b>
 	    		</ion-item>
 	    	</span>
     	</span>
